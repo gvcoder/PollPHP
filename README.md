@@ -1,3 +1,3 @@
-# Node Console To-Do
+# PHP Poll Application
 
-A simple to-do list application built with Node.js.
+PHP-MYSQL-JS-HTML : Poll Application
