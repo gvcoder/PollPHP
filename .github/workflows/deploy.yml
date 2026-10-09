@@ -1,0 +1,35 @@
+name: Deploy PollPHP to Shared Hosting
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: FTP Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 📂 Sync Files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          server-dir: ${{ secrets.FTP_REMOTE_ROOT || 'public_html/' }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github*
+            **/.github*/**
+            **/README.md
+            **/requirements.md
+            **/design.md
+            **/schema.sql
+            **/config/config.php

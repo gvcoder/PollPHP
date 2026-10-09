@@ -1,0 +1,19 @@
+# Configuration with sensitive credentials
+config/config.php
+
+# Environment variables
+.env
+.env.*
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Server logs
+error_log
+access_log
+*.log

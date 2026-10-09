@@ -1,0 +1,19 @@
+# Deny access to sensitive files and directories
+<FilesMatch "^(config\.php|config\.sample\.php|schema\.sql|\.env|\.git.*)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory listings
+Options -Indexes
+
+# Follow symbolic links
+Options +FollowSymLinks
+
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Ensure clean URLs if needed in the future
+</IfModule>
