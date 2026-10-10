@@ -154,11 +154,9 @@ PollPHP/
   * Once the poll active period is completed (expired): The creator has an option in their dashboard to **"Publish Results Page"** (sets `results_published = 1` and generates a dedicated public URL, e.g., `/results.php?poll=slug`).
   * The creator can **Unpublish / Remove** this public results page at any time with a single toggle (`results_published = 0`). If unpublished, the public URL returns a clean 404/not available page.
 
-### 4.3. Admin & User Seeding
-* Seeded default Admin user via `schema.sql`:
-  * Email: `admin@pollphp.local`
-  * Password: `Admin@PollPHP2026!` (must be forced/recommended to change on first login)
-  * Stored using standard `password_hash()` bcrypt.
+### 4.3. Admin & User Setup
+* Admin creation handled securely via `php create-admin.php` CLI utility (avoids exposing hardcoded credentials or hashes in public version control).
+* Stored using standard `password_hash()` bcrypt.
 
 ### 4.3. Anonymous Voting & Duplicate Prevention (Zero-Login)
 To allow frictionless anonymous voting without registration while avoiding trivial vote spamming:

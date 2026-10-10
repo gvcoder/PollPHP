@@ -68,12 +68,20 @@ A lightweight, responsive, and mobile-friendly polling system built with vanilla
 
 ---
 
-## 🛡️ Default Administrator Account
+## 🛡️ Creating an Administrator Account
 
-An initial system administrator is pre-seeded in `schema.sql`:
-* **Admin Portal URL:** `http://127.0.0.1:8000/admin/login.php`
-* **Email:** `admin@pollphp.local`
-* **Password:** `Admin@PollPHP2026!`
+To prevent exposing credentials in public repositories, default administrator accounts are **not** pre-seeded.
+
+Create your administrator account securely via the CLI helper:
+```bash
+# Interactive prompt:
+php create-admin.php
+
+# Or passing arguments directly:
+php create-admin.php "System Admin" "admin@yourdomain.com" "YourStrongPassword!"
+```
+
+Once created, log in at `http://127.0.0.1:8000/admin/login.php`.
 
 ---
 

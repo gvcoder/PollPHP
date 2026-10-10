@@ -70,15 +70,4 @@ CREATE TABLE `votes` (
     INDEX `idx_votes_created_at` (`created_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- 5. Seed Initial Default System Administrator
--- Email: admin@pollphp.local
--- Initial Password: Admin@PollPHP2026!
-INSERT INTO `users` (`name`, `email`, `password_hash`, `auth_provider`, `role`, `status`)
-VALUES (
-    'System Admin',
-    'admin@pollphp.local',
-    '$2y$10$pu4nIZ4BXvfSEbziT9G52uFDgYZdh1WypFNTcv7XVUfUlLlg7w4cm',
-    'local',
-    'admin',
-    'active'
-);
+
