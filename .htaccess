@@ -1,5 +1,5 @@
 # Deny access to sensitive files and directories
-<FilesMatch "^(config\.php|config\.sample\.php|schema\.sql|\.env|\.git.*)$">
+<FilesMatch "^(config\.php|config\.sample\.php|schema\.sql|create-admin\.php|\.env|\.git.*)$">
     Order allow,deny
     Deny from all
 </FilesMatch>
